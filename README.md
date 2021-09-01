@@ -1,7 +1,7 @@
 # oke-lbr
 Using an OCI LBR to frontend Multiple Kubernetes Services without an Ingress Controller
 
-* Create Kubernetes Services 
+## Create Kubernetes Services 
 ```
 kubectl apply -f ./oke/nginx-nodeport.yaml
 
@@ -29,7 +29,7 @@ replicaset.apps/my-nginx-green-68bdf6b7f6   3         3         3       3h37m
 replicaset.apps/my-nginx-red-747f49594d     3         3         3       3h37m
 ```
 
-* Create LBR
+## Create LBR
 Use OCI Stacks to create the resources
 Below values need to be updated.
 - compartment_id : Compartment ID where LBR needs to be created.
@@ -39,7 +39,7 @@ Below values need to be updated.
 - green_node_port : Node port allocated green service.
 - nodes : Node ips of your Node Pool, you can get the ip's using kubectl get nodes 
 
-** Access the service using the LBR
+## Access the service using the LBR
 
 - curl http://lbr-ip:80/red/index.html
 - curl http://lbr-ip:80/red/index.html
